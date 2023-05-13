@@ -21,13 +21,16 @@ if __name__ == '__main__':
     p2 = multiprocessing.Process(target=toggle_pin, args=(pinNum, 2))
     p3 = multiprocessing.Process(target=toggle_pin, args=(pinNum, 3))
 
-    
-    while GPIO.read(156) == True:
-        time.sleep(0.1)
-
     p1.start()
-    time.sleep(0.5) 
     p2.start()
+    p3.start()
 
     p1.join()
     p2.join()
+    p3.join()
+
+"""
+Tror det er lurt å lage array med pinNum og delay, og så lage en for for-løkke som lager en prosess for hver av de.
+Samme med start og join.
+Laget litt i farta uten mulighet for testing.
+"""
