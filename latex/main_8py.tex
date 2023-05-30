@@ -1,0 +1,103 @@
+\doxysection{main.\+py File Reference}
+\hypertarget{main_8py}{}\label{main_8py}\index{main.py@{main.py}}
+
+
+Controlles the whole sequence.  
+
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classmain_1_1Unit}{main.\+Unit}}
+\item 
+class \mbox{\hyperlink{classmain_1_1Task}{main.\+Task}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{main_8py_a36be2bc26745d15c8ac7e48deebd8408}{main.\+Check\+Photo\+Cell}} (old\+\_\+state, new\+\_\+state)
+\begin{DoxyCompactList}\small\item\em Checks the photocell if a new bag has passed. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{main_8py_aba7a19e4f9f8861ab82422339e05d599}{main.\+get\+Width\+From\+JSON}} (path)
+\begin{DoxyCompactList}\small\item\em Returns width of bag that\textquotesingle{}s being analyzed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{main_8py_a677f696bbc112787fb83b926b3a7675f}\label{main_8py_a677f696bbc112787fb83b926b3a7675f} 
+bool {\bfseries main.\+old\+\_\+state} = True
+\item 
+\Hypertarget{main_8py_a86cc0c2d3b40e8d33d8dd98b459621a2}\label{main_8py_a86cc0c2d3b40e8d33d8dd98b459621a2} 
+{\bfseries main.\+sensor} = GPIO.\+setup(157, GPIO.\+IN)
+\item 
+\Hypertarget{main_8py_ad55a1ce7352a58a109fcc98dc2c58ad7}\label{main_8py_ad55a1ce7352a58a109fcc98dc2c58ad7} 
+list {\bfseries main.\+pin\+\_\+arr} = \mbox{[}74, 71, 73\mbox{]}
+\item 
+\Hypertarget{main_8py_ad400ec052b744d4f34261ff24f812e08}\label{main_8py_ad400ec052b744d4f34261ff24f812e08} 
+{\bfseries main.\+bag\+\_\+passed}
+\item 
+\Hypertarget{main_8py_abfba1439a27cf0628649363f45ba1445}\label{main_8py_abfba1439a27cf0628649363f45ba1445} 
+{\bfseries main.\+tmp} = \mbox{\hyperlink{classmain_1_1Task}{Task}}(len(pin\+\_\+arr), pin\+\_\+arr)
+\item 
+\Hypertarget{main_8py_a33f8f541786905a95184c99befce8c13}\label{main_8py_a33f8f541786905a95184c99befce8c13} 
+int {\bfseries main.\+bag\+Width} = \mbox{\hyperlink{main_8py_aba7a19e4f9f8861ab82422339e05d599}{get\+Width\+From\+JSON}}(\textquotesingle{}/home/radxa/SRRP-\/GUI/build/baginfo.\+json\textquotesingle{}) / 1000
+\item 
+\Hypertarget{main_8py_a58d6f2b2adcf676c2b3841e399cfdb08}\label{main_8py_a58d6f2b2adcf676c2b3841e399cfdb08} 
+{\bfseries main.\+p} = Process(target=tmp.\+run, args=(bag\+Width, )).start()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Controlles the whole sequence. 
+
+\hypertarget{main_8py_author_doxygen}{}\doxysubsection{\texorpdfstring{Author (s)}{Author (s)}}\label{main_8py_author_doxygen}
+
+\begin{DoxyItemize}
+\item Eskild Dybwad Svennungsen
+\item Kristoffer Solheim 
+\end{DoxyItemize}
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8py_a36be2bc26745d15c8ac7e48deebd8408}\label{main_8py_a36be2bc26745d15c8ac7e48deebd8408} 
+\index{main.py@{main.py}!CheckPhotoCell@{CheckPhotoCell}}
+\index{CheckPhotoCell@{CheckPhotoCell}!main.py@{main.py}}
+\doxysubsubsection{\texorpdfstring{CheckPhotoCell()}{CheckPhotoCell()}}
+{\footnotesize\ttfamily main.\+Check\+Photo\+Cell (\begin{DoxyParamCaption}\item[{}]{old\+\_\+state,  }\item[{}]{new\+\_\+state }\end{DoxyParamCaption})}
+
+
+
+Checks the photocell if a new bag has passed. 
+
+A new bag is considered to be in the system when it has fully passed the photocell. We check this by comparing the old\+\_\+state to the new\+\_\+state. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ old\_state\ \textcolor{keywordflow}{and}\ old\_state\ !=\ new\_state}
+
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em old\+\_\+state} & The previous state of the photocell. \\
+\hline
+{\em new\+\_\+state} & The current state of the photocell.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(True, new\+\_\+state) If bag has passed. 
+
+(False, new\+\_\+state If bag has not passed. 
+\end{DoxyReturn}
+\Hypertarget{main_8py_aba7a19e4f9f8861ab82422339e05d599}\label{main_8py_aba7a19e4f9f8861ab82422339e05d599} 
+\index{main.py@{main.py}!getWidthFromJSON@{getWidthFromJSON}}
+\index{getWidthFromJSON@{getWidthFromJSON}!main.py@{main.py}}
+\doxysubsubsection{\texorpdfstring{getWidthFromJSON()}{getWidthFromJSON()}}
+{\footnotesize\ttfamily main.\+get\+Width\+From\+JSON (\begin{DoxyParamCaption}\item[{}]{path }\end{DoxyParamCaption})}
+
+
+
+Returns width of bag that\textquotesingle{}s being analyzed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Filepath to the json file containing bag information. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+width Return width of given bag. 
+\end{DoxyReturn}

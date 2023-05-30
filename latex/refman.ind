@@ -1,0 +1,58 @@
+\begin{theindex}
+
+  \item {\_\_init\_\_}
+    \subitem {main.Task}, \hyperpage{7}
+    \subitem {main.Unit}, \hyperpage{9}
+
+  \indexspace
+
+  \item {activate}
+    \subitem {main.Unit}, \hyperpage{9}
+
+  \indexspace
+
+  \item {CheckPhotoCell}
+    \subitem {main.py}, \hyperpage{14}
+
+  \indexspace
+
+  \item {Description}, \hyperpage{1}
+
+  \indexspace
+
+  \item {getPin}
+    \subitem {main.Unit}, \hyperpage{11}
+  \item {getWidthFromJSON}
+    \subitem {main.py}, \hyperpage{14}
+
+  \indexspace
+
+  \item {main.py}, \hyperpage{13}
+    \subitem {CheckPhotoCell}, \hyperpage{14}
+    \subitem {getWidthFromJSON}, \hyperpage{14}
+  \item {main.Task}, \hyperpage{7}
+    \subitem {\_\_init\_\_}, \hyperpage{7}
+    \subitem {pressDuration}, \hyperpage{8}
+    \subitem {run}, \hyperpage{8}
+    \subitem {startDelay}, \hyperpage{8}
+  \item {main.Unit}, \hyperpage{9}
+    \subitem {\_\_init\_\_}, \hyperpage{9}
+    \subitem {activate}, \hyperpage{9}
+    \subitem {getPin}, \hyperpage{11}
+
+  \indexspace
+
+  \item {pressDuration}
+    \subitem {main.Task}, \hyperpage{8}
+
+  \indexspace
+
+  \item {run}
+    \subitem {main.Task}, \hyperpage{8}
+
+  \indexspace
+
+  \item {startDelay}
+    \subitem {main.Task}, \hyperpage{8}
+
+\end{theindex}

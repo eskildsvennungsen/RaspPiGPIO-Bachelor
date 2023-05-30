@@ -16,7 +16,6 @@
 
 # Imports
 import json
-import numpy as np
 import time
 import gpio as GPIO
 from multiprocessing import Process
@@ -81,7 +80,7 @@ class Task():
         @param is_first_iteration Longer distance to first press, first iteration returns longer delay.
         @return Delay for press to start
         '''
-        return (((0.025 if is_first_iteration else 0.02) + (2 * bag_size_in_m)) / (3 * RMPtoMS(36))) - 0.12
+        return (((0.025 if is_first_iteration else 0.02) + (2 * bag_size_in_m)) / (3 * 0.83)) - 0.12
 
     def pressDuration(self, bag_size_in_m):
         '''! Calculates the duration of the press.
@@ -118,10 +117,6 @@ def getWidthFromJSON(path):
         width = data['Settings']['width']
         f.close()
         return width
-
-def RMPtoMS(rpm):
-    return(0.046 * np.pi * rpm /60)
-
 
 if __name__ == "__main__":
     os.system("sudo chmod a+rw /sys/class/gpio/export")

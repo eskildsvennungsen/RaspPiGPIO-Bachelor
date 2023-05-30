@@ -1,0 +1,99 @@
+\doxysection{main.\+Task Class Reference}
+\hypertarget{classmain_1_1Task}{}\label{classmain_1_1Task}\index{main.Task@{main.Task}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmain_1_1Task_a76bda9067dd7c8289c57cbe5177dc441}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, ammount, pins)
+\begin{DoxyCompactList}\small\item\em Initializes a task. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmain_1_1Task_ad04744431dcb168cc57ddf0ff082f5d0}{run}} (self, bag\+\_\+size\+\_\+in\+\_\+m)
+\begin{DoxyCompactList}\small\item\em Runs task. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmain_1_1Task_af5d065b9402255707809d8c60216cb56}{start\+Delay}} (self, bag\+\_\+size\+\_\+in\+\_\+m, is\+\_\+first\+\_\+iteration)
+\begin{DoxyCompactList}\small\item\em Calculates delay before a press starts. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmain_1_1Task_a944336f85d638046cbd581cec9e73c50}{press\+Duration}} (self, bag\+\_\+size\+\_\+in\+\_\+m)
+\begin{DoxyCompactList}\small\item\em Calculates the duration of the press. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classmain_1_1Task_afc65ed9e0e604c81c87ef332c3730f3b}\label{classmain_1_1Task_afc65ed9e0e604c81c87ef332c3730f3b} 
+{\bfseries ammount}
+\item 
+\Hypertarget{classmain_1_1Task_a844299fc79a8fb34aafcd3b98d8af17c}\label{classmain_1_1Task_a844299fc79a8fb34aafcd3b98d8af17c} 
+{\bfseries units}
+\item 
+\Hypertarget{classmain_1_1Task_a5c47ffa2ebe0927ed8be5f45641ded8f}\label{classmain_1_1Task_a5c47ffa2ebe0927ed8be5f45641ded8f} 
+{\bfseries pin\+\_\+array}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classmain_1_1Task_a76bda9067dd7c8289c57cbe5177dc441}\label{classmain_1_1Task_a76bda9067dd7c8289c57cbe5177dc441} 
+\index{main.Task@{main.Task}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!main.Task@{main.Task}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily main.\+Task.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{ammount,  }\item[{}]{pins }\end{DoxyParamCaption})}
+
+
+
+Initializes a task. 
+
+A Task is initialized with an array of {\bfseries{Unit}} (s). 
+\begin{DoxyParams}{Parameters}
+{\em ammount} & The ammount of {\bfseries{SRRP-\/modules}} in use. \\
+\hline
+{\em pin} & Array of pins that controll the modules. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+GPIO pin-\/number. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classmain_1_1Task_a944336f85d638046cbd581cec9e73c50}\label{classmain_1_1Task_a944336f85d638046cbd581cec9e73c50} 
+\index{main.Task@{main.Task}!pressDuration@{pressDuration}}
+\index{pressDuration@{pressDuration}!main.Task@{main.Task}}
+\doxysubsubsection{\texorpdfstring{pressDuration()}{pressDuration()}}
+{\footnotesize\ttfamily main.\+Task.\+press\+Duration (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{bag\+\_\+size\+\_\+in\+\_\+m }\end{DoxyParamCaption})}
+
+
+
+Calculates the duration of the press. 
+
+\begin{DoxyReturn}{Returns}
+Duration for the press. 
+\end{DoxyReturn}
+\Hypertarget{classmain_1_1Task_ad04744431dcb168cc57ddf0ff082f5d0}\label{classmain_1_1Task_ad04744431dcb168cc57ddf0ff082f5d0} 
+\index{main.Task@{main.Task}!run@{run}}
+\index{run@{run}!main.Task@{main.Task}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily main.\+Task.\+run (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{bag\+\_\+size\+\_\+in\+\_\+m }\end{DoxyParamCaption})}
+
+
+
+Runs task. 
+
+Iterates through the task sequentially. \Hypertarget{classmain_1_1Task_af5d065b9402255707809d8c60216cb56}\label{classmain_1_1Task_af5d065b9402255707809d8c60216cb56} 
+\index{main.Task@{main.Task}!startDelay@{startDelay}}
+\index{startDelay@{startDelay}!main.Task@{main.Task}}
+\doxysubsubsection{\texorpdfstring{startDelay()}{startDelay()}}
+{\footnotesize\ttfamily main.\+Task.\+start\+Delay (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{bag\+\_\+size\+\_\+in\+\_\+m,  }\item[{}]{is\+\_\+first\+\_\+iteration }\end{DoxyParamCaption})}
+
+
+
+Calculates delay before a press starts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bag\+\_\+size\+\_\+in\+\_\+m} & Uses the bagsize as variable to calculate delay \\
+\hline
+{\em is\+\_\+first\+\_\+iteration} & Longer distance to first press, first iteration returns longer delay. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Delay for press to start 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{main_8py}{main.\+py}}\end{DoxyCompactItemize}

@@ -1,16 +1,27 @@
-from periphery import GPIO
+import gpio as GPIO
 import multiprocessing
 import time
 
-##############################
+############################## 
 # Sjekk referanse for pinNum #
 ###########'##################
 #GPIO.setup(pinNum, "out")
 #GPIO.setup(pinNum, "out")
-sensor = GPIO(156, "in")
+sensor = GPIO.setup(156, GPIO.IN)
+presse1 = GPIO.setup(71, GPIO.OUT)
+presse2 = GPIO.setup(74, GPIO.OUT)
+presse3 = GPIO.setup(72, GPIO.OUT)
 sensorValue = False
 
-pins = [1, 2, 3]
+while True:
+    print(presse1)
+    GPIO.write(71, GPIO.LOW)
+    time.sleep(1)
+    GPIO.write(71, GPIO.HIGH)
+    time.sleep(1)
+    print(GPIO.read(156))
+"""
+pins = [71, 74, 72]
 delays = [1, 2, 3]
 
 def toggle_pin(pin_num, delay):
@@ -28,3 +39,4 @@ if __name__ == '__main__':
             prosess.join()
         
     #print(len(pins))
+"""
